@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-be-vietnam), "Be Vietnam Pro", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-serif: var(--font-fraunces), "Fraunces", "Times New Roman", serif;
+  --color-cream: #f4efe4;
+  --color-ink: #1c2b1a;
+  --color-menu: #eef1e6;
+  --color-footer: #101510;
+}
+
+:root {
+  color-scheme: light;
+  --background: #f4efe4;
+  --foreground: #1c2b1a;
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #3c5428;
+  color: #f4efe4;
+}
+
+@keyframes ice-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.ice-float {
+  animation: ice-float 4.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ice-float {
+    animation: none;
+  }
+
+  html:not(.lenis) {
+    scroll-behavior: auto;
+  }
+}
